@@ -123,7 +123,7 @@ gulp.task('favicon', function () {
   Images
 \*------------------------------------*/
 gulp.task('img', function () {
-  return gulp.src('src/img/*')
+  return gulp.src('src/img/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('build/img'))
     .pipe(browserSync.reload({
@@ -161,7 +161,7 @@ gulp.task('watch', function () {
   gulp.watch('src/js/vendors/*.js', gulp.series('js-vendors'));
   gulp.watch('src/js/**/*.js', gulp.series('js'));
   gulp.watch("src/*.ico", gulp.series('favicon'));
-  gulp.watch("src/img/*.{png,jpg,jpeg,gif,svg}", gulp.series('img'));
+  gulp.watch("src/img/**/*.{png,jpg,jpeg,gif,svg}", gulp.series('img'));
   gulp.watch("src/fonts/**/*.*", gulp.series('fonts'));
 });
 
