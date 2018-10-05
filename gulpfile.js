@@ -146,6 +146,10 @@ gulp.task('browser-sync', function() {
   browserSync.init(null, {
     server: {
       baseDir: 'build'
+    },
+    port: 8080,
+    ui: {
+      port: 9090,
     }
   });
   browserSync.watch('build', browserSync.reload());
